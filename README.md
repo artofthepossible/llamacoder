@@ -20,16 +20,15 @@
 
 1. Clone the repo: `git clone https://github.com/artifthepossible/llamacoder`
 2. Create a `.env` file and add your [Together AI API key](https://dub.sh/together-ai/?utm_source=example-app&utm_medium=llamacoder&utm_campaign=llamacoder-app-signup): `TOGETHER_API_KEY=`
+3. Run `npm install` and `npm run dev` to install dependencies and run locally
 
-3a. Run `npm install` and `npm run dev` to install dependencies and run locally
-
-Using Docker File
-3b. docker build -t llamacoder-app:v1 .
-3c.docker run -p 3000:3000 llamacoder-app:v1
+## Using Docker File
+3. docker build -t llamacoder-app:v1 .
+3. docker run -p 3000:3000 llamacoder-app:v1
 Launch Application: http://localhost:3000
 
-Using Docker Compose
-3d. docker compose up --build
+## Using Docker Compose
+3. docker compose up --build
 http://localhost:3000
 Launch Application: http://localhost:3000
 
