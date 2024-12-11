@@ -20,3 +20,20 @@ docs for more detail on building and pushing.
 
 ### References
 * [Docker's Node.js guide](https://docs.docker.com/language/nodejs/)
+
+### Deploy to kubernetes powered by docker desktop
+Overview of the YAML Files
+
+Deployment:
+
+The llama-coder-app Deployment runs 3 replicas of the application.
+The container image is demonstrationorg/llama-coder-app:latest.
+The container listens on port 8080.
+Environment variables ENVIRONMENT and LOG_LEVEL are set for the application.
+Resource requests and limits are defined to ensure the application doesn't consume excessive resources.
+Liveness and readiness probes are configured to monitor the health of the application.
+Service:
+
+The Service exposes the llama-coder-app Deployment internally within the Kubernetes cluster.
+It maps port 80 of the Service to port 8080 of the container.
+The Service type is ClusterIP, which means it is only accessible within the cluster.
