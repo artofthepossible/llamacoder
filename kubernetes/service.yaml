@@ -3,12 +3,12 @@ kind: Service
 metadata:
   name: llama-coder-app
   labels:
-    app: llama-coder-app
+    app: llama-coder
 spec:
   selector:
-    app: llama-coder-app
+    app: llama-coder
   ports:
   - protocol: TCP
     port: 80
-    targetPort: 8080
+    targetPort: 3000
   type: ClusterIP

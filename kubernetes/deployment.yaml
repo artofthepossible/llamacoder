@@ -1,29 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: llama-coder-app
+  name: llama-coder
   labels:
-    app: llama-coder-app
+    app: llama-coder
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: llama-coder-app
+      app: llama-coder
   template:
     metadata:
       labels:
-        app: llama-coder-app
+        app: llama-coder
     spec:
       containers:
-      - name: llama-coder-app
-        image: demonstrationorg/llamacoder-app:v1
+      - name: llama-coder
+        image: llama-coder:latest
         ports:
-        - containerPort: 8080
-        env:
-        - name: ENVIRONMENT
-          value: "production"
-        - name: LOG_LEVEL
-          value: "info"
+        - containerPort: 3000
         resources:
           requests:
             memory: "128Mi"
@@ -34,12 +29,12 @@ spec:
         livenessProbe:
           httpGet:
             path: /health
-            port: 8080
+            port: 3000
           initialDelaySeconds: 5
           periodSeconds: 10
         readinessProbe:
           httpGet:
             path: /ready
-            port: 8080
+            port: 3000
           initialDelaySeconds: 5
           periodSeconds: 10
