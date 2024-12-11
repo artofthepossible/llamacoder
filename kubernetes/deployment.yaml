@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: llama-coder-app
-        image: demonstrationorg/llama-coder-app:latest
+        image: demonstrationorg/llamacoder-app:v1
         ports:
         - containerPort: 8080
         env:
